@@ -1,0 +1,26 @@
+<?php if ($this->isAdditionalInformationRequired()) : ?>
+	<ol class="opc">
+		<li class="section allow active">
+			<div class="step-title">
+	            <span class="number">2</span>
+	            <h2><?php echo $this->__('Additional Information') ?></h2>
+	        </div>
+			<div class="step">
+				<ul class="form-list">
+					<?php if ($this->isGenderRequired()) : ?>
+						<?php $_gender = $this->getLayout()->createBlock('customer/widget_gender') ?>
+						<?php if ($_gender->isEnabled()): ?>
+							<li><?php echo $_gender->toHtml() ?></li>
+						<?php endif ?>
+					<?php endif; ?>
+					<?php if ($this->isDateOfBirthRequired()) : ?>
+					 	<?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
+						<?php if ($_dob->isEnabled()): ?>
+							<li><?php echo $_dob->toHtml() ?></li>
+						<?php endif ?>
+					<?php endif; ?>
+				</ul>
+			</div>
+		</li>
+	</ol>
+<?php endif; ?>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+         <system>
+            <children>
+                <unzercw translate="title" module="UnzerCw">
+                    <title><![CDATA[Unzer]]></title>
+                    <action>adminhtml/configunzercw</action>
+                    <sort_order>109</sort_order>
+                </unzercw>
+            </children>
+         </system>
+    </menu>
+    <acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<unzercw>
+                                <title><![CDATA[Unzer]]></title>
+                                <sort_order>16</sort_order>
+                            </unzercw>
+							<config>
+								<children>
+									<unzercw translate="title" module="UnzerCw">
+										<title><![CDATA[Unzer]]></title>
+									</unzercw>
+								</children>
+							</config>
+						</children>
+					</system>
+					<sales>
+						<children>
+							<unzercw>
+                                <title><![CDATA[Unzer]]></title>
+                                <sort_order>16</sort_order>
+                                <children>
+                               		
+									
+								</children>
+                            </unzercw>
+						</children>
+					</sales>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+</config>

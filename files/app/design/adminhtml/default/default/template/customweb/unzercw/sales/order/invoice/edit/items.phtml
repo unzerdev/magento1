@@ -1,0 +1,174 @@
+<div class="grid np">
+  <div class="hor-scroll">
+    <table cellspacing="0" class="data order-tables">
+        <col />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <col width="1" />
+        <thead>
+            <tr class="headings">
+                <th><?php echo Mage::helper('sales')->__('Product') ?></th>
+                <th><?php echo Mage::helper('sales')->__('Price') ?></th>
+                <th class="a-center"><?php echo Mage::helper('sales')->__('Qty') ?></th>
+                <th><span class="nobr"><?php echo Mage::helper('sales')->__('Adjust Qty') ?></span></th>
+                <th><?php echo Mage::helper('sales')->__('Subtotal') ?></th>
+                <th><span class="nobr"><?php echo Mage::helper('sales')->__('Tax Amount') ?></span></th>
+                <th><span class="nobr"><?php echo Mage::helper('sales')->__('Discount Amount') ?></span></th>
+                <th class="last"><span class="nobr"><?php echo Mage::helper('sales')->__('Row Total') ?></span></th>
+            </tr>
+        </thead>
+        <?php if ($this->canEditQty()): ?>
+        <tfoot>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="3" class="a-center"><?php echo $this->getUpdateButtonHtml() ?></td>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+        </tfoot>
+        <?php endif; ?>
+        <?php $_items = $this->getInvoice()->getAllItems() ?>
+        <?php $_i=0;foreach ($_items as $_item): ?>
+        <?php if ($_item->getOrderItem()->getParentItem()) continue; else $_i++; ?>
+        <tbody class="<?php echo $_i%2?'even':'odd' ?>">
+            <?php echo $this->getItemHtml($_item) ?>
+            <?php echo $this->getItemExtraInfoHtml($_item->getOrderItem()) ?>
+        </tbody>
+        <?php endforeach; ?>
+
+        <?php if (!$this->getOrder()->getIsVirtual() && ($this->getInvoice()->getShippingAmount() > 0 || $this->getInvoice()->getShowShippingItem())): ?>
+        <tbody>
+        	<tr class="border">
+        		<td>
+        			<h5 class="title"><span><?php echo Mage::helper('sales')->__('Shipping & Handling') ?></span></h5>
+        			<div><?php echo $this->escapeHtml($this->getOrder()->getShippingDescription()) ?></div>
+				</td>
+				<td class="a-right">
+					<?php if ($this->helper('tax')->displaySalesBothPrices() || $this->helper('tax')->displaySalesPriceExclTax()): ?>
+            			<span class="price-excl-tax">
+            				<?php if ($this->helper('tax')->displaySalesBothPrices()): ?>
+			                    <span class="label"><?php echo $this->__('Excl. Tax'); ?>:</span>
+			                <?php endif; ?>
+			                <?php echo $this->displayShippingPriceExclTax(); ?>
+            			</span>
+            			<br />
+        			<?php endif; ?>
+        			<?php if ($this->helper('tax')->displaySalesBothPrices() || $this->helper('tax')->displaySalesPriceInclTax()): ?>
+			            <span class="price-incl-tax">
+			                <?php if ($this->helper('tax')->displaySalesBothPrices()): ?>
+			                	<span class="label"><?php echo $this->__('Incl. Tax'); ?>:</span>
+			                <?php endif; ?>
+			                <?php echo $this->displayShippingPriceInclTax() ?>
+			        	</span>
+			        <?php endif; ?>
+            	</td>
+				<td class="a-center"><strong>1</strong></td>
+				<td class="a-center">
+				    <?php if ($this->canEditQty()) : ?>
+				        <input type="text" class="input-text qty-input" name="invoice[items][shipping]" value="<?php echo ($this->getInvoice()->getShippingAmount() > 0) ? 1 : 0 ?>"/>
+				    <?php else : ?>
+				        <?php echo ($this->getInvoice()->getShippingAmount() > 0) ? 1 : 0 ?>
+				    <?php endif; ?>
+			    </td>
+			    <td class="a-right">
+			    	<?php if ($this->helper('tax')->displaySalesBothPrices() || $this->helper('tax')->displaySalesPriceExclTax()): ?>
+            			<span class="price-excl-tax">
+            				<?php if ($this->helper('tax')->displaySalesBothPrices()): ?>
+			                    <span class="label"><?php echo $this->__('Excl. Tax'); ?>:</span>
+			                <?php endif; ?>
+			                <?php echo $this->displayShippingPriceExclTax(); ?>
+            			</span>
+            			<br />
+        			<?php endif; ?>
+        			<?php if ($this->helper('tax')->displaySalesBothPrices() || $this->helper('tax')->displaySalesPriceInclTax()): ?>
+			            <span class="price-incl-tax">
+			                <?php if ($this->helper('tax')->displaySalesBothPrices()): ?>
+			                	<span class="label"><?php echo $this->__('Incl. Tax'); ?>:</span>
+			                <?php endif; ?>
+			                <?php echo $this->displayShippingPriceInclTax() ?>
+			        	</span>
+			        <?php endif; ?>
+			    </td>
+				<td class="a-right"><?php echo $this->displayShippingTaxAmount() ?></td>
+    			<td class="a-right"></td>
+    			<td class="a-right last"><?php echo $this->displayShippingPriceInclTax() ?></td>
+        	</tr>
+        </tbody>
+        <?php endif; ?>
+    </table>
+  </div>
+</div>
+<br />
+<div class="clear"></div>
+<?php echo $this->getChildHtml('order_totalbar') ?>
+<div class="clear"></div>
+
+<div class="box-right entry-edit" id="invoice_totals">
+    <div class="entry-edit-head"><h4><?php echo $this->__('Invoice Totals') ?></h4></div>
+    <div class="order-totals">
+        <?php echo $this->getChildHtml('invoice_totals') ?>
+        <div class="order-totals-bottom">
+          <div class="divider"></div>
+          <div class="a-right">
+          <?php echo $this->getChildHtml('save_button') ?>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<table class="order-info-foot" cellpadding="10" cellspacing="0" width="100%">
+    <tbody>
+        <tr>
+            <td class="section">
+                <table id="comments_block" cellpadding="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td style="padding-right:30px; width:50%;">&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td class="document-totals section">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<script type="text/javascript">
+//<![CDATA[
+var submitButtons = $$('.submit-button');
+var updateButtons = $$('.update-button');
+var enableSubmitButtons = <?php echo (int) !$this->getDisableSubmitButton() ?>;
+var fields = $$('.qty-input');
+
+updateButtons.each(function (elem) {elem.disabled=true;elem.addClassName('disabled');});
+
+for(var i=0;i<fields.length;i++){
+    fields[i].observe('change', checkButtonsRelation)
+    fields[i].baseValue = fields[i].value;
+}
+
+function checkButtonsRelation() {
+    var hasChanges = false;
+    fields.each(function (elem) {
+        if (elem.baseValue != elem.value) {
+            hasChanges = true;
+        }
+    }.bind(this));
+    if (hasChanges) {
+        submitButtons.each(function (elem) {elem.disabled=true;elem.addClassName('disabled');});
+        updateButtons.each(function (elem) {elem.disabled=false;elem.removeClassName('disabled');});
+    }
+    else {
+        if (enableSubmitButtons) {
+            submitButtons.each(function (elem) {elem.disabled=false;elem.removeClassName('disabled');});
+        }
+        updateButtons.each(function (elem) {elem.disabled=true;elem.addClassName('disabled');});
+    }
+}
+//]]>
+</script>

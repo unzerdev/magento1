@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Customweb_UnzerCw>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+            	<Mage_Api/>
+                <Mage_Payment/>
+                <Mage_Sales/>
+            </depends>
+            <version>1.11.0</version>
+        </Customweb_UnzerCw>
+    </modules>
+</config>

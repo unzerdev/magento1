@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<jstranslator>
+	<please_wait translate="message" module="UnzerCw">
+		<message>Please wait, processing your order...</message>
+	</please_wait>
+</jstranslator>

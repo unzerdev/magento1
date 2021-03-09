@@ -1,0 +1,15 @@
+<?php
+
+if (false) {
+	$reason = Customweb_Licensing_UnzerCw_License::getValidationErrorMessage();
+	if ($reason === null) {
+		$reason = 'Unknown error.';
+	}
+	$token = Customweb_Licensing_UnzerCw_License::getCurrentToken();
+	echo '<div class="notification-global notification-global-notice">';
+	echo '<strong>' . Mage::helper('UnzerCw')->__('Unzer:') . '</strong>';
+	echo Mage::helper('UnzerCw')->__('There is a problem with your license. Please contact us (www.sellxed.com/support). Reason: %s, Current Token: %s', $reason, $token);
+	echo '</div>';
+}
+
+?>

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+document.observe('dom:loaded', function(){
+	<?php foreach ($this->getPaymentMethods() as $paymentCode) : ?>
+		cwpm_<?php echo $this->escapeHtml($paymentCode) ?> = new Customweb.UnzerCw(
+			'<?php echo $this->escapeHtml($this->getHiddenFieldsUrl()) ?>',
+			'<?php echo $this->escapeHtml($this->getVisibleFieldsUrl()) ?>',
+			'<?php echo $this->escapeHtml($this->getAuthorizeUrl()) ?>',
+			'<?php echo $this->escapeHtml($this->getJavascriptUrl()) ?>',
+			'<?php echo $this->escapeHtml($this->getSaveShippingMethodUrl()) ?>',
+			'<?php echo $this->escapeHtml($paymentCode) ?>',
+			'<?php echo $this->escapeHtml($this->__('Please wait, processing your order...')) ?>'
+		);
+	<?php endforeach; ?>
+
+	<?php if ($this->isPreload()) : ?>
+		new Customweb.CheckoutPreload('<?php echo $this->escapeHtml($this->getPreloadUrl()) ?>');
+	<?php endif; ?>
+});
+</script>

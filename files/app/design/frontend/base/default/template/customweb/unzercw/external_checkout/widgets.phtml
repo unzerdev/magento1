@@ -1,0 +1,7 @@
+<?php foreach ($this->getWidgets() as $widget) : ?>
+		<div class="<?php echo $this->escapeHtml($widget['checkoutName']) ?>-widget unzercw-external-checkout-widget">
+			<?php echo $widget['html'] ?>
+		</div>
+	</li>
+	<li>
+<?php endforeach; ?>

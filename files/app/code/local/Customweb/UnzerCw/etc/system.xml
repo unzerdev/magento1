@@ -1,0 +1,3727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<sections>
+		<unzercw translate="label comment" module="UnzerCw">
+			<class>separator-top</class>
+			<label><![CDATA[Unzer]]></label>
+			<tab>sales</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>900</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+
+			<groups>
+				<general translate="label" module="UnzerCw">
+					<label><![CDATA[Unzer Parameters]]></label>
+					<frontend_type>text</frontend_type>
+					<sort_order>0</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<link translate="label comment">
+							<label></label>
+							<frontend_model>unzercw/adminhtml_system_config_link</frontend_model>
+							<sort_order>0</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</link>
+						<version translate="label comment">
+							<label><![CDATA[Version]]></label>
+							<frontend_type>label</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</version>
+						<operating_mode translate="label comment">
+							<label><![CDATA[Operation Mode]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Operation mode of the shop.]]></comment>
+							<source_model>unzercw/source_Operatingmode</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</operating_mode>
+						<public_key_live translate="label comment">
+							<label><![CDATA[Public Key (Live)]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>11</sort_order>
+							<comment><![CDATA[Public Key for live requests, provided by Unzer.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</public_key_live>
+						<private_key_live translate="label comment">
+							<label><![CDATA[Private Key (Live)]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>12</sort_order>
+							<comment><![CDATA[Private Key for live requests, provided by Unzer.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</private_key_live>
+						<public_key_test translate="label comment">
+							<label><![CDATA[Public Key (Test)]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>13</sort_order>
+							<comment><![CDATA[Public Key for test requests, provided by Unzer.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</public_key_test>
+						<private_key_test translate="label comment">
+							<label><![CDATA[Private Key (Test)]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>14</sort_order>
+							<comment><![CDATA[Private Key for test requests, provided by Unzer.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</private_key_test>
+						<order_id_schema translate="label comment">
+							<label><![CDATA[OrderId Schema]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+							<comment><![CDATA[Here you can set a schema for the orderId parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_id_schema>
+						<payment_reference_schema translate="label comment">
+							<label><![CDATA[PaymentReference Schema]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>16</sort_order>
+							<comment><![CDATA[Here you can set a schema for the paymentReference parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</payment_reference_schema>
+						<invoice_id_schema translate="label comment">
+							<label><![CDATA[InvoiceID Schema]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>17</sort_order>
+							<comment><![CDATA[Here you can set a schema for the invoiceId parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_id_schema>
+						<cancel_existing_orders translate="label comment">
+							<label><![CDATA[Cancel pending orders when out of stock]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[If a product is in stock only once and the payment of the customer ordering this product fails or is aborted, it won't be available until the order is canceled (see timeout option below). Enable this setting to cancel the customer's pending orders when he returns to the cart page and a product is not available anymore. Be careful though: If you enable this option, there is a chance that payments are made with the corresponding order being already canceled.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</cancel_existing_orders>
+						<cancel_pending_orders translate="label comment">
+							<label><![CDATA[Timeout for pending orders]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>102</sort_order>
+							<comment><![CDATA[Define the number of seconds after which orders with a pending payment will be cancelled automatically.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</cancel_pending_orders>
+						<wait_for_success translate="label comment">
+							<label><![CDATA[Wait On Success Page]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[In some cases the transaction requires a few seconds until it is successfully authorized. When this option is enabled the user is hold until the transaction reach the final state. If this is not the case in 30 seconds a message is shown to the customer, which explains the situation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</wait_for_success>
+						
+						<debug_log translate="label comment">
+							<label><![CDATA[Logging]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Enable or disable logging.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</debug_log>
+						<logging_level translate="label comment">
+							<label><![CDATA[Logging Level]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Messages of this or a higher level will be logged.]]></comment>
+							<source_model>unzercw/source_loggingLevel</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</logging_level>
+					</fields>
+				</general>
+				<recurring translate="label" module="UnzerCw">
+					<label><![CDATA[Recurring Payments]]></label>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<comment><![CDATA[If you would like to use recurring payments, you need our magento module "Customweb Subscription". For further information go to <a href="http://www.sellxed.com/shop/" target="_blank">sellxed.com</a>.]]></comment>
+				</recurring>
+			</groups>
+		</unzercw>
+		<payment>
+			<groups>
+				<unzercw_creditcard translate="label comment" module="UnzerCw">
+					<label>Unzer Credit / Debit Card</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_CreditCardCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_CreditCardSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<placeholder_size translate="label comment">
+							<label><![CDATA[Element Size]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[How should elements from Unzer be loaded? With narrow elements the element label is displayed by the store, with wide elements it is loaded via javascript by Unzer. The input elements are always loaded from Unzer.]]></comment>
+							<source_model>unzercw/source_Placeholdersize</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</placeholder_size>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<capturing translate="label comment">
+							<label><![CDATA[Capturing]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[Should the amount be captured automatically after the order (Direct Charge) or should the amount only be reserved (Authorize)?]]></comment>
+							<source_model>unzercw/source_Capturing</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</capturing>
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>206</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_creditcard><unzercw_directdebitssepa translate="label comment" module="UnzerCw">
+					<label>Unzer Sepa Direct Debits</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_DirectDebitsSepaCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_DirectDebitsSepaSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<placeholder_size translate="label comment">
+							<label><![CDATA[Element Size]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[How should elements from Unzer be loaded? With narrow elements the element label is displayed by the store, with wide elements it is loaded via javascript by Unzer. The input elements are always loaded from Unzer.]]></comment>
+							<source_model>unzercw/source_Placeholdersize</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</placeholder_size>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<merchant_name translate="label comment">
+							<label><![CDATA[Merchant name]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>206</sort_order>
+							<comment><![CDATA[Here you can configure the merchant name which is displayed as part of the mandate text.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</merchant_name>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>207</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_directdebitssepa><unzercw_securesepa translate="label comment" module="UnzerCw">
+					<label>Unzer Secure SEPA</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_SecureSepaCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_SecureSepaSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<merchant_name translate="label comment">
+							<label><![CDATA[Merchant name]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[Here you can configure the merchant name which is displayed as part of the mandate text.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</merchant_name>
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<placeholder_size translate="label comment">
+							<label><![CDATA[Element Size]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[How should elements from Unzer be loaded? With narrow elements the element label is displayed by the store, with wide elements it is loaded via javascript by Unzer. The input elements are always loaded from Unzer.]]></comment>
+							<source_model>unzercw/source_Placeholdersize</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</placeholder_size>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_securesepa><unzercw_openinvoice translate="label comment" module="UnzerCw">
+					<label>Unzer Invoice</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_OpenInvoiceCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_OpenInvoiceSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_openinvoice><unzercw_secureinvoice translate="label comment" module="UnzerCw">
+					<label>Unzer Secure Invoice</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_SecureInvoiceCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_SecureInvoiceSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_secureinvoice><unzercw_paypal translate="label comment" module="UnzerCw">
+					<label>Unzer PayPal</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_PayPalCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_PayPalSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<capturing translate="label comment">
+							<label><![CDATA[Capturing]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Should the amount be captured automatically after the order (Direct Charge) or should the amount only be reserved (Authorize)?]]></comment>
+							<source_model>unzercw/source_Capturing</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</capturing>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>206</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_paypal><unzercw_sofortueberweisung translate="label comment" module="UnzerCw">
+					<label>Unzer SOFORT</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_SofortueberweisungCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_SofortueberweisungSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_sofortueberweisung><unzercw_giropay translate="label comment" module="UnzerCw">
+					<label>Unzer giropay</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_GiropayCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_GiropaySpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_giropay><unzercw_przelewy24 translate="label comment" module="UnzerCw">
+					<label>Unzer Przelewy24</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_Przelewy24Currency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_Przelewy24Specificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_przelewy24><unzercw_ideal translate="label comment" module="UnzerCw">
+					<label>Unzer iDEAL</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_IDealCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_IDealSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<placeholder_size translate="label comment">
+							<label><![CDATA[Element Size]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[How should elements from Unzer be loaded? With narrow elements the element label is displayed by the store, with wide elements it is loaded via javascript by Unzer. The input elements are always loaded from Unzer.]]></comment>
+							<source_model>unzercw/source_Placeholdersize</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</placeholder_size>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>206</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_ideal><unzercw_prepayment translate="label comment" module="UnzerCw">
+					<label>Unzer Prepayment</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_PrepaymentCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_PrepaymentSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_prepayment><unzercw_eps translate="label comment" module="UnzerCw">
+					<label>Unzer EPS</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_EpsCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_EpsSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_eps><unzercw_unzerbanktransfer translate="label comment" module="UnzerCw">
+					<label>Unzer Unzer Bank Transfer</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_UnzerBankTransferCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_UnzerBankTransferSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_unzerbanktransfer><unzercw_unzerinstallment translate="label comment" module="UnzerCw">
+					<label>Unzer Unzer Instalment</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_UnzerInstallmentCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_UnzerInstallmentSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<effective_interest_rate translate="label comment">
+							<label><![CDATA[Applied Interest Rate]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[The interest rate in percent that you enter here will be applied onto the instalment. The rate must be above the amount that you have agreed up on with Unzer.]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</effective_interest_rate>
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_unzerinstallment><unzercw_alipay translate="label comment" module="UnzerCw">
+					<label>Unzer Alipay</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_AlipayCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_AlipaySpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_alipay><unzercw_wechatpay translate="label comment" module="UnzerCw">
+					<label>Unzer WeChat Pay</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_WeChatPayCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_WeChatPaySpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_wechatpay><unzercw_bcmc translate="label comment" module="UnzerCw">
+					<label>Unzer Bancontact</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label comment">
+							<label><![CDATA[Enabled]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<comment><![CDATA[Enable the payment method]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</active>
+						<title translate="label comment">
+							<label><![CDATA[Titel]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<comment><![CDATA[Title of the payment method]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</title>
+						<description translate="label comment">
+							<label><![CDATA[Description]]></label>
+							<frontend_type>textarea</frontend_type>
+							<sort_order>30</sort_order>
+							<comment><![CDATA[Payment method description]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</description>
+						<show_image translate="label comment">
+							<label><![CDATA[Show the payment image]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>40</sort_order>
+							<comment><![CDATA[Show the payment image on the checkout page]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_image>
+						<show_payment_id translate="label comment">
+							<label><![CDATA[Show the payment id]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>50</sort_order>
+							<comment><![CDATA[Show the payment id in the order information]]></comment>
+							<source_model>unzercw/source_show</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_payment_id>
+						<Currency translate="label comment">
+							<label><![CDATA[Currency]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>60</sort_order>
+							<comment><![CDATA[Allowed currencies for this payment method]]></comment>
+							<source_model>unzercw/source_BcmcCurrency</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</Currency>
+						<use_base_currency translate="label comment">
+							<label><![CDATA[Use base currency]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>70</sort_order>
+							<comment><![CDATA[Send amounts to Unzer in base currency.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</use_base_currency>
+						<allowspecific translate="label comment">
+							<label><![CDATA[Payment from applicable countries]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>80</sort_order>
+							<comment><![CDATA[Payment from applicable countries]]></comment>
+							<source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</allowspecific>
+						<specificcountry translate="label comment">
+							<label><![CDATA[Payment from specific countries]]></label>
+							<frontend_type>multiselect</frontend_type>
+							<sort_order>90</sort_order>
+							<comment><![CDATA[Payment from specific countries]]></comment>
+							<source_model>unzercw/source_BcmcSpecificcountry</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+							<can_be_empty>1</can_be_empty>
+						</specificcountry>
+						<sort_order translate="label comment">
+							<label><![CDATA[Sort Order]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>100</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</sort_order>
+						<min_order_total translate="label comment">
+							<label><![CDATA[Minimum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>110</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</min_order_total>
+						<max_order_total translate="label comment">
+							<label><![CDATA[Maximum Order Total]]></label>
+							<frontend_type>text</frontend_type>
+							<sort_order>120</sort_order>
+							<comment><![CDATA[]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</max_order_total>
+						<settlement translate="label comment">
+							<label><![CDATA[Invoice settlement]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>130</sort_order>
+							<comment><![CDATA[Choose settlement after order in case you want an invoice to be created with your oder. The state of the invoice will set according to your capture status]]></comment>
+							<source_model>unzercw/source_settlement</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</settlement>
+						<invoice_send_email translate="label comment">
+							<label><![CDATA[Send invoice email]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>140</sort_order>
+							<comment><![CDATA[Send the invoice email automatically after invoice creation.]]></comment>
+							<source_model>unzercw/source_enabled</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</invoice_send_email>
+						
+						<status_authorized translate="label comment">
+							<label><![CDATA[Authorized Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>200</sort_order>
+							<comment><![CDATA[This status is set, when the payment was successfull and it is authorized.]]></comment>
+							<source_model>unzercw/source_Statusauthorized</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_authorized>
+						<status_uncertain translate="label comment">
+							<label><![CDATA[Uncertain Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>201</sort_order>
+							<comment><![CDATA[You can specify the order status for new orders that have an uncertain authorisation status.]]></comment>
+							<source_model>unzercw/source_Statusuncertain</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_uncertain>
+						<status_captured translate="label comment">
+							<label><![CDATA[Captured Status]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>202</sort_order>
+							<comment><![CDATA[You can specify the order status for orders that are captured either directly after the order or manually in the backend.]]></comment>
+							<source_model>unzercw/source_Statuscaptured</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</status_captured>
+						<placeholder_size translate="label comment">
+							<label><![CDATA[Element Size]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>203</sort_order>
+							<comment><![CDATA[How should elements from Unzer be loaded? With narrow elements the element label is displayed by the store, with wide elements it is loaded via javascript by Unzer. The input elements are always loaded from Unzer.]]></comment>
+							<source_model>unzercw/source_Placeholdersize</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</placeholder_size>
+						<send_basket translate="label comment">
+							<label><![CDATA[Send Basket]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>204</sort_order>
+							<comment><![CDATA[Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations.]]></comment>
+							<source_model>unzercw/source_Sendbasket</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_basket>
+						<send_customer translate="label comment">
+							<label><![CDATA[Send Customer]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>205</sort_order>
+							<comment><![CDATA[Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer.]]></comment>
+							<source_model>unzercw/source_Sendcustomer</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</send_customer>
+						<authorizationMethod translate="label comment">
+							<label><![CDATA[Authorization Method]]></label>
+							<frontend_type>select</frontend_type>
+							<sort_order>206</sort_order>
+							<comment><![CDATA[Select the authorization method to use for processing this payment method.]]></comment>
+							<source_model>unzercw/source_AuthorizationMethod</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</authorizationMethod>
+					</fields>
+				</unzercw_bcmc>
+			</groups>
+		</payment>
+	</sections>
+</config>

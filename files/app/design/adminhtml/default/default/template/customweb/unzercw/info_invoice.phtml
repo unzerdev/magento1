@@ -1,0 +1,57 @@
+<?php
+/**
+ * You are allowed to use this API in your web application.
+ *
+ * Copyright (C) 2018 by customweb GmbH
+ *
+ * This program is licenced under the customweb software licence. With the
+ * purchase or the installation of the software in your application you
+ * accept the licence agreement. The allowed usage is outlined in the
+ * customweb software licence which can be found under
+ * http://www.sellxed.com/en/software-license-agreement
+ *
+ * Any modification or distribution is strictly forbidden. The license
+ * grants you the installation in one application. For multiuse you will need
+ * to purchase further licences at http://www.sellxed.com/shop.
+ *
+ * See the customweb software licence agreement for more details.
+ *
+ *
+ * @category	Customweb
+ * @package		Customweb_UnzerCw
+ * 
+ */
+
+try {
+	$transaction = Mage::helper('UnzerCw')->loadTransactionByOrder($this->getInfo()->getOrder()->getId());
+	$captures = $transaction->getTransactionObject()->getCaptures();
+
+	foreach ($captures as $capture) :
+		$labels = $capture->getCaptureLabels();
+
+	?>
+		<h4><?php echo $this->__("Capture information") ?></h4>
+		<table class="data order-tables" style="width:100%">
+			<colgroup>
+				<col width="160px" />
+				<col width="40px" />
+				<col />
+			</colgroup>
+			<tbody>
+			<?php
+			$i = 0;
+			foreach ($labels as $l) :
+				$description = "";
+				if (isset($l['description'])) {
+					$description = Mage::helper("UnzerCw")->getTooltip($this, $this->escapeHtml($l['description']));
+				}
+
+				?>
+				<tr><td><b><?php echo $this->escapeHtml($l['label']) ?></b></td><td><?php echo $description ?></td><td><?php echo Customweb_Core_Util_Xml::escape($l['value']) ?></td></tr>
+				<?php $i++;
+			endforeach;
+			?>
+		</tbody></table>
+	<?php endforeach;
+} catch (Exception $e) {}
+?>

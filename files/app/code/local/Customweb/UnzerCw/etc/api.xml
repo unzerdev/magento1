@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<api>
+		<resources>
+			<unzercw_transaction translate="title" module="UnzerCw">
+				<model>unzercw/transaction_api</model>
+				<title>UnzerCw Transaction API</title>
+				<acl>unzercw_transaction</acl>
+				<methods>
+					<list translate="title" module="UnzerCw">
+						<title>Retrieve transaction</title>
+						<method>items</method>
+						<acl>unzercw_transaction/list</acl>
+					</list>
+					<info translate="title" module="UnzerCw">
+						<title>Retrieve transaction data by transaction id</title>
+						<method>info</method>
+						<acl>unzercw_transaction/info</acl>
+					</info>
+					<infoByPaymentId translate="title" module="UnzerCw">
+						<title>Retrieve transaction data by payment id</title>
+						<method>infoByPaymentId</method>
+						<acl>unzercw_transaction/infoByPaymentId</acl>
+					</infoByPaymentId>
+				</methods>
+				<faults module="UnzerCw">
+					<filters_invalid>
+						<code>101</code >
+						<message>Invalid filters specified. Details in error message.</message>
+					</filters_invalid>
+					<not_exists>
+						<code>102</code >
+						<message>Transaction doesn't exist.</message>
+					</not_exists>
+				</faults>
+			</unzercw_transaction>
+		</resources>
+		<v2>
+            <resources_function_prefix>
+                <unzercw_transaction>unzercwTransaction</unzercw_transaction>
+            </resources_function_prefix>
+        </v2>
+		<acl>
+			<resources>
+				<unzercw_transaction translate="title" module="UnzerCw">
+					<title>UnzerCw Transactions</title>
+					<list translate="title" module="UnzerCw">
+						<title>View All</title>
+					</list>
+					<info translate="title" module="UnzerCw">
+						<title>Get Info By Transaction Id</title>
+					</info>
+					<infoByPaymentId translate="title" module="UnzerCw">
+						<title>Get Info By Payment Id</title>
+					</infoByPaymentId>
+				 </unzercw_transaction>
+			</resources>
+		</acl>
+	</api>
+</config>

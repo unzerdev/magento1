@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <api2>
+        <resource_groups>
+            <unzercw_transaction translate="title" module="api2">
+                <title>UnzerCw Transaction</title>
+                <sort_order>150</sort_order>
+            </unzercw_transaction>
+        </resource_groups>
+        <resources>
+            <unzercw_transaction translate="title" module="api2">
+                <group>unzercw_transaction</group>
+                <sort_order>90</sort_order>
+                <model>unzercw/api2_transaction</model>
+                <working_model>unzercw/transaction</working_model>
+                <title>UnzerCw Transaction</title>
+                <privileges>
+                    <admin>
+                        <retrieve>1</retrieve>
+                    </admin>
+                </privileges>
+                <attributes translate="transaction_id transaction_external_id order_id order_payment_id alias_for_display alias_active payment_method authorization_type customer_id updated_on created_on payment_id authorization_amount authorization_status paid currency data" module="api2">
+                    <transaction_id>Transaction ID</transaction_id>
+                    <transaction_external_id>External Transaction Id</transaction_external_id>
+                    <order_id>Order Id</order_id>
+                    <order_payment_id>Order Payment Id</order_payment_id>
+                    <alias_for_display>Alias For Display</alias_for_display>
+                    <alias_active>Is Alias Active</alias_active>
+                    <payment_method>Payment Method Name</payment_method>
+                    <authorization_type>Authorization Type</authorization_type>
+                    <customer_id>Customer Id</customer_id>
+                    <updated_on>Update Date</updated_on>
+                    <created_on>Creation Date</created_on>
+                    <payment_id>Payment Id</payment_id>
+                    <authorization_amount>Authorization Amount</authorization_amount>
+                    <authorization_status>Authorization Status</authorization_status>
+                    <paid>Is Paid</paid>
+                    <currency>Currency</currency>
+                    <data>Transaction Data</data>
+                </attributes>
+                <routes>
+                    <route_entity>
+                        <route>/unzercw/transactions/:id</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+                    <route_collection>
+                        <route>/unzercw/transactions</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                </routes>
+                <versions>1</versions>
+            </unzercw_transaction>
+        </resources>
+    </api2>
+</config>

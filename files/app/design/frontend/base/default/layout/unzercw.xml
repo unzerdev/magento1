@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<layout>
+	<checkout_onepage_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				 <action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="content">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</checkout_onepage_index>
+	
+	<onestepcheckout_index_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="content">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</onestepcheckout_index_index>
+	
+	<onepagecheckout_index_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="content">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</onepagecheckout_index_index>
+	
+	<gomage_checkout_onepage_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="before_body_end">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</gomage_checkout_onepage_index>
+
+	<aw_onestepcheckout_index_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="content">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</aw_onestepcheckout_index_index>
+	
+	<firecheckout_index_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="content">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</firecheckout_index_index>
+	
+	<iwd_opc_index_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="content">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</iwd_opc_index_index>
+	
+	<opc_index_index>
+			<reference name="head">
+				<action method="addItem"><type>js</type><name>customweb/unzercw/checkout.js</name><params/><if/></action>
+				<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+			</reference>
+			<reference name="content">
+        		<block type="unzercw/Checkout" name="loadJavascriptForUnzerCw" after="-" />
+   			</reference>
+	</opc_index_index>
+	
+	<unzercw_checkout_pay>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+		</reference>
+	</unzercw_checkout_pay>
+
+	 <checkout_cart_index>
+	 	<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>customweb/unzercw/updates.css</name></action>
+		</reference>
+        <reference name="checkout.cart.top_methods">
+            <block type="unzercw/externalCheckout_widgets" name="checkout.cart.methods.unzercw_external_checkouts.top" before="-" template="customweb/unzercw/external_checkout/widgets.phtml" />
+        </reference>
+        <reference name="checkout.cart.methods">
+            <block type="unzercw/externalCheckout_widgets" name="checkout.cart.methods.unzercw_external_checkouts.bottom" before="-" template="customweb/unzercw/external_checkout/widgets.phtml" />
+        </reference>
+    </checkout_cart_index>
+    
+    <unzercw_external_checkout_review>
+    	<remove name="right"/>
+        <remove name="left"/>
+    
+    	<block type="unzercw/externalCheckout_review" name="root" output="toHtml" template="customweb/unzercw/external_checkout/review.phtml">
+            <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/onepage/review/item.phtml</template></action>
+            <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/onepage/review/item.phtml</template></action>
+            <block type="checkout/cart_totals" name="checkout.onepage.review.info.totals" as="totals" template="checkout/onepage/review/totals.phtml"/>
+		</block>
+    </unzercw_external_checkout_review>
+</layout>

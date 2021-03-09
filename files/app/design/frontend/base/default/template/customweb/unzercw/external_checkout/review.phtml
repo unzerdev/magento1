@@ -1,0 +1,120 @@
+<?php
+$baseNumber = 2;
+if ($this->getQuote()->isVirtual()) {
+	$baseNumber--;
+}
+if ($this->isAdditionalInformationRequired()) {
+	$baseNumber++;
+}
+?>
+
+<ol class="opc">
+	<li class="section allow active" id="opc-login">
+		<div class="step-title">
+			<span class="number"><?php echo $baseNumber ?></span>
+			<h2><?php echo $this->__('Order Information') ?></h2>
+		</div>
+		<div class="step">
+			<?php if (!$this->getQuote()->isVirtual()) : ?>
+			<div class="col2-set">
+				<div class="col-1">
+			<?php endif; ?>
+					<h3><?php echo $this->__('Billing Information') ?></h3>
+					<address><?php echo $this->getQuote()->getBillingAddress()->format('html') ?></address>
+			<?php if (!$this->getQuote()->isVirtual()) : ?>
+				</div>
+				<div class="col-2">
+					<h3><?php echo $this->__('Shipping Information') ?></h3>
+					<address><?php echo $this->getQuote()->getShippingAddress()->format('html') ?></address>
+				</div>
+			</div>
+			<?php endif; ?>
+		</div>
+	</li>
+
+	<li class="section allow active">
+		<div class="step-title">
+			<span class="number"><?php echo $baseNumber + 1 ?></span>
+			<h2><?php echo $this->__('Order Review') ?></h2>
+		</div>
+		<div id="external-checkout-review-table-wrapper">
+			<table class="data-table" id="external-checkout-review-table">
+				<?php if ($this->helper('tax')->displayCartBothPrices()): $colspan = $rowspan = 2; else: $colspan = $rowspan = 1; endif; ?>
+				<col />
+				<col width="1" />
+				<col width="1" />
+				<col width="1" />
+				<?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+				<col width="1" />
+				<col width="1" />
+				<?php endif; ?>
+				<thead>
+					<tr>
+						<th rowspan="<?php echo $rowspan ?>"><?php echo $this->__('Product Name') ?></th>
+						<th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Price') ?></th>
+						<th rowspan="<?php echo $rowspan ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
+						<th colspan="<?php echo $colspan ?>" class="a-center"><?php echo $this->__('Subtotal') ?></th>
+					</tr>
+					<?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+						<tr>
+							<th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+							<th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+							<th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+							<th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+						</tr>
+					<?php endif; ?>
+				</thead>
+				<?php echo $this->getChildHtml('totals'); ?>
+				<tbody>
+				<?php foreach($this->getItems() as $_item): ?>
+					<?php echo $this->getItemHtml($_item)?>
+				<?php endforeach ?>
+				</tbody>
+			</table>
+		</div>
+		<script type="text/javascript">
+		//<![CDATA[
+			decorateTable('external-checkout-review-table');
+			truncateOptions();
+		//]]>
+		</script>
+		<?php if ($this->getRenderConfirmationFormElements()) : ?>
+			<div id="external-checkout-review-submit">
+				<ol class="checkout-agreements">
+					<?php foreach ($this->getAgreements() as $_a): ?>
+						<li>
+							<div class="agreement-content"<?php echo ($_a->getContentHeight() ? ' style="height:' . $this->escapeHtml($_a->getContentHeight()) . '"' : '')?>>
+								<?php if ($_a->getIsHtml()):?>
+									<?php echo $_a->getContent() ?>
+								<?php else:?>
+									<?php echo nl2br($this->escapeHtml($_a->getContent())) ?>
+								<?php endif; ?>
+							</div>
+							<p class="agree">
+								<input type="checkbox" id="agreement-<?php echo $this->escapeHtml($_a->getId()) ?>" name="agreement[<?php echo $this->escapeHtml($_a->getId()) ?>]" value="1" title="<?php echo $this->escapeHtml($_a->getCheckboxText()) ?>" class="checkbox" /><label for="agreement-<?php echo $this->escapeHtml($_a->getId()) ?>"><?php echo $_a->getIsHtml() ? $_a->getCheckboxText() : $this->escapeHtml($_a->getCheckboxText()) ?></label>
+							</p>
+						</li>
+					<?php endforeach ?>
+				</ol>
+				<div class="buttons-set" id="external-checkout-review-buttons-container">
+					<button id="external-checkout-review-button" type="submit" title="<?php echo $this->__('Place Order') ?>" class="button btn-checkout"><span><span><?php echo $this->__('Place Order') ?></span></span></button>
+					<span class="please-wait" id="external-checkout-review-please-wait" style="display:none;">
+						<img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" alt="<?php echo $this->__('Submitting order information...') ?>" title="<?php echo $this->__('Submitting order information...') ?>" class="v-middle" /> <?php echo $this->__('Submitting order information...') ?>
+					</span>
+					<input type="hidden" name="external-checkout-context-updated-on" value="<?php echo $this->escapeHtml($this->getContext()->getUpdatedOn()) ?>" />
+				</div>
+				<script type="text/javascript">
+				//<![CDATA[
+					$('external-checkout-review-button').observe('click', function() {
+						var container = $('external-checkout-review-buttons-container');
+						container.addClassName('disabled');
+						container.setStyle({opacity:.5});
+						this.hide();
+						Element.show('external-checkout-review-please-wait');
+					});
+				//]]>
+				</script>
+			</div>
+		<?php endif; ?>
+	</li>
+</ol>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:typens="urn:{{var wsdl.name}}" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+    name="{{var wsdl.name}}" targetNamespace="urn:{{var wsdl.name}}">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Magento">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/" />
+            <complexType name="unzercwTransactionEntity">
+                <all>
+                    <element name="transaction_id" type="xsd:int" minOccurs="0" />
+                    <element name="transaction_external_id" type="xsd:string" minOccurs="0" />
+                    <element name="order_id" type="xsd:int" minOccurs="0" />
+                    <element name="order_payment_id" type="xsd:int" minOccurs="0" />
+                    <element name="alias_for_display" type="xsd:string" minOccurs="0" />
+                    <element name="alias_active" type="xsd:boolean" minOccurs="0" />
+                    <element name="payment_method" type="xsd:string" minOccurs="0" />
+                    <element name="authorization_type" type="xsd:string" minOccurs="0" />
+                    <element name="customer_id" type="xsd:int" minOccurs="0" />
+                    <element name="updated_on" type="xsd:string" minOccurs="0" />
+                    <element name="created_on" type="xsd:string" minOccurs="0" />
+                    <element name="payment_id" type="xsd:string" minOccurs="0" />
+                    <element name="authorization_amount" type="xsd:string" minOccurs="0" />
+                    <element name="authorization_status" type="xsd:string" minOccurs="0" />
+                    <element name="paid" type="xsd:boolean" minOccurs="0" />
+                    <element name="currency" type="xsd:string" minOccurs="0" />
+                    <element name="data" type="typens:associativeArray" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="unzercwTransactionEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:unzercwTransactionEntity[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+        </schema>
+    </types>
+    <message name="unzercwTransactionListRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="filters" type="typens:filters" />
+    </message>
+    <message name="unzercwTransactionListResponse">
+        <part name="result" type="typens:unzercwTransactionEntityArray" />
+    </message>
+    <message name="unzercwTransactionInfoRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="transactionId" type="xsd:int" />
+        <part name="attributes" type="typens:ArrayOfString" />
+    </message>
+    <message name="unzercwTransactionInfoResponse">
+        <part name="transactionInfo" type="typens:unzercwTransactionEntity" />
+    </message>
+    <message name="unzercwTransactionInfoByPaymentIdRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="paymentId" type="xsd:int" />
+        <part name="attributes" type="typens:ArrayOfString" />
+    </message>
+    <message name="unzercwTransactionInfoByPaymentIdResponse">
+        <part name="transactionInfo" type="typens:unzercwTransactionEntity" />
+    </message>
+    <portType name="{{var wsdl.handler}}PortType">
+        <operation name="unzercwTransactionList">
+            <documentation>Retrieve UnzerCw Transactions</documentation>
+            <input message="typens:unzercwTransactionListRequest" />
+            <output message="typens:unzercwTransactionListResponse" />
+        </operation>
+        <operation name="unzercwTransactionInfo">
+            <documentation>Retrieve UnzerCw Transaction Data By Transaction Id</documentation>
+            <input message="typens:unzercwTransactionInfoRequest" />
+            <output message="typens:unzercwTransactionInfoResponse" />
+        </operation>
+        <operation name="unzercwTransactionInfoByPaymentId">
+            <documentation>Retrieve UnzerCw Transaction Data By Payment Id</documentation>
+            <input message="typens:unzercwTransactionInfoByPaymentIdRequest" />
+            <output message="typens:unzercwTransactionInfoByPaymentIdResponse" />
+        </operation>
+    </portType>
+    <binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="unzercwTransactionList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="unzercwTransactionInfo">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="unzercwTransactionInfoByPaymentId">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+</definitions>

@@ -1,0 +1,72 @@
+<?php
+/**
+ * You are allowed to use this API in your web application.
+ *
+ * Copyright (C) 2018 by customweb GmbH
+ *
+ * This program is licenced under the customweb software licence. With the
+ * purchase or the installation of the software in your application you
+ * accept the licence agreement. The allowed usage is outlined in the
+ * customweb software licence which can be found under
+ * http://www.sellxed.com/en/software-license-agreement
+ *
+ * Any modification or distribution is strictly forbidden. The license
+ * grants you the installation in one application. For multiuse you will need
+ * to purchase further licences at http://www.sellxed.com/shop.
+ *
+ * See the customweb software licence agreement for more details.
+ *
+ *
+ * @category	Customweb
+ * @package		Customweb_UnzerCw
+ * 
+ */
+?>
+<?php
+$creditmemo = $this->getCreditmemo();
+if ($creditmemo->getOrder()->getPayment()->getMethodInstance() instanceof Customweb_UnzerCw_Model_Method) :
+	$refund = $this->getRefund();
+	if ($refund != null) :
+	?>
+		<div id="unzercw_creditmemo_invoiceitems">
+			<div class="entry-edit">
+			    <div class="entry-edit-head">
+			        <h4 class="icon-head head-products"><?php echo $this->getModuleHelper()->__('Unzer Refund Items') ?></h4>
+			    </div>
+			    <div class="grid np">
+			    	<div class="hor-scroll">
+				    	<table cellspacing="0" class="data">
+				    		<col />
+					        <col width="1" />
+					        <col width="1" />
+					        <col width="1" />
+				    		<thead>
+				    			<tr class="headings">
+				    				<th><?php echo $this->getModuleHelper()->__('Product') ?></th>
+				    				<th class="a-center"><?php echo $this->getModuleHelper()->__('Qty') ?></th>
+				    				<th><span class="nobr"><?php echo $this->getModuleHelper()->__('Tax Amount') ?></span></th>
+				    				<th><span class="nobr"><?php echo $this->getModuleHelper()->__('Amount Incl. Tax') ?></span></th>
+				    			</tr>
+				    		</thead>
+				    		<?php $i=0;foreach ($refund->getRefundItems() as $item) : ?>
+					    		<tbody class="<?php echo $i%2?'even':'odd' ?>">
+					    			<tr class="border">
+					    				<td>
+					    					<h5 class="title"><?php echo $item->getName() ?></h5>
+					    					<div><strong><?php echo $this->getModuleHelper()->__('SKU:') ?></strong> <?php echo $item->getSku() ?></div>
+					    				</td>
+					    				<td class="a-center"><?php echo $item->getQuantity() ?></td>
+					    				<td class="a-right"><?php echo Mage::helper('core')->currency($item->getTaxAmount(), true, false) ?></td>
+					    				<td class="a-right last"><?php echo Mage::helper('core')->currency($item->getAmountIncludingTax(), true, false) ?></td>
+					    			</tr>
+					    		</tbody>
+					    	<?php $i++;endforeach; ?>
+				    	</table>
+				    </div>
+			    </div>
+			</div>
+		</div>
+	<?php
+	endif;
+endif;
+?>

@@ -1,0 +1,34 @@
+<?php
+/**
+ * You are allowed to use this API in your web application.
+ *
+ * Copyright (C) 2018 by customweb GmbH
+ *
+ * This program is licenced under the customweb software licence. With the
+ * purchase or the installation of the software in your application you
+ * accept the licence agreement. The allowed usage is outlined in the
+ * customweb software licence which can be found under
+ * http://www.sellxed.com/en/software-license-agreement
+ *
+ * Any modification or distribution is strictly forbidden. The license
+ * grants you the installation in one application. For multiuse you will need
+ * to purchase further licences at http://www.sellxed.com/shop.
+ *
+ * See the customweb software licence agreement for more details.
+ *
+ *
+ * @category	Customweb
+ * @package		Customweb_UnzerCw
+ * 
+ */
+?>
+
+<?php echo $this->htmlEscape($this->getMethod()->getTitle()) ?>{{pdf_row_separator}}
+
+<?php if ($this->getOrder() != null && $this->getPaymentId() != null && $this->getMethod()->getPaymentMethodConfigurationValue('show_payment_id')) : ?>
+	<?php echo $this->__('Payment Id') ?>: <?php echo $this->escapeHtml($this->getPaymentId()) ?>{{pdf_row_separator}}
+<?php endif; ?>
+
+<?php if ($this->getOrder() != null && $this->getPaymentInformation() != null) : ?>
+	{{pdf_row_separator}}<?php echo str_replace("\n", '{{pdf_row_separator}}', Customweb_Core_Util_Html::toText($this->getPaymentInformation())); ?>
+<?php endif; ?>
