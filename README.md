@@ -1,3 +1,5 @@
+![Logo](https://dev.unzer.com/wp-content/uploads/2020/09/Unzer__PrimaryLogo_Raspberry_RGB.png)
+
 # Unzer Magento 1.9 Plugin
 This Plugin provides for an easy way to connect to the Unzer Rest API.
 
